@@ -24,4 +24,7 @@
     <!-- Hardware keys enable/disable -->
     <bool name="config_hwKeysOnNavBar">true</bool>
 
+    <!-- Enable lockscreen rotation by default -->
+    <bool name="config_enableLockScreenRotation">true</bool>
+
 </resources>
