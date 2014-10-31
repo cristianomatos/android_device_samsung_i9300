@@ -21,8 +21,8 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Hardware keys enable/disable -->
-    <bool name="config_hwKeysOnNavBar">true</bool>
+    <!-- Hardware keys on/off option -->
+    <bool name="config_hwKeysPref">true</bool>
 
     <!-- Enable lockscreen rotation by default -->
     <bool name="config_enableLockScreenRotation">true</bool>
