@@ -262,4 +262,7 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
+    <!-- Boolean to enable HW keys disabler -->
+    <bool name="config_hwKeysPref">true</bool>
+
 </resources>
