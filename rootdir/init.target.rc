@@ -66,8 +66,12 @@ service configure_zram /system/bin/configure_zram
 
 # CyanogenMod Performance Profiles
 
-# Powersave
+# Extreme Powersave
 on property:sys.perf.profile=0
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
+
+# Powersave
+on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor pegasusq
     write /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_1_1 1400000
     write /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_2_0 1300000
@@ -87,7 +91,7 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 25
 
 # Balanced (standard)
-on property:sys.perf.profile=1
+on property:sys.perf.profile=2
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor pegasusq
     write /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_1_1 500000
     write /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_2_0 200000
@@ -107,7 +111,7 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 37
 
 # Performance
-on property:sys.perf.profile=2
+on property:sys.perf.profile=3
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor pegasusq
     write /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_1_1 200000
     write /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_2_0 200000
@@ -125,3 +129,7 @@ on property:sys.perf.profile=2
     write /sys/devices/system/cpu/cpufreq/pegasusq/cpu_up_rate 5
     write /sys/devices/system/cpu/cpufreq/pegasusq/up_threshold 70
     write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 50
+
+# Extreme Performance
+on property:sys.perf.profile=4
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
